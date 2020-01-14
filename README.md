@@ -1,2 +1,1 @@
-# xy-redis-sharing
-Redis Set 化
+# Redis Set 化
