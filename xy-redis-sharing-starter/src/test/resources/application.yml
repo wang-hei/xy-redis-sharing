@@ -1,0 +1,34 @@
+redis:
+  sharing:
+    enabled: true
+    node:
+      one:
+        rule: 1,2,3
+        timeout: 1000
+        cluster:
+          nodes: 127.0.0.1:7001
+          maxRedirects: 6
+        pool:
+          max-active: 128 #最大连接数
+          max-idle: 64 #最大空闲连接数
+          max-wait: -1 #获取连接最大等待时间 ms
+      two:
+        rule: 4,5,6
+        timeout: 1000
+        cluster:
+          nodes: 127.0.0.1:6001
+          maxRedirects: 6
+        pool:
+          max-active: 128 #最大连接数
+          max-idle: 64 #最大空闲连接数
+          max-wait: -1 #获取连接最大等待时间 ms
+spring:
+  redis:
+    timeout: 1000
+    cluster:
+      nodes: 127.0.0.1:8001
+      maxRedirects: 6
+    pool:
+      max-active: 128 #最大连接数
+      max-idle: 64 #最大空闲连接数
+      max-wait: -1 #获取连接最大等待时间 ms
